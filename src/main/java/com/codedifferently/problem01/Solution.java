@@ -15,6 +15,16 @@ public class Solution {
      * @return
      */
     public String findLongestConsecutiveSet(Integer[] allNumbers) {
-       return null;
+        Arrays.sort(allNumbers);
+        HashMap<Integer, Integer> newHash = new HashMap<>();
+
+        for (int i=0; i<allNumbers.length-1; i++) {
+            if (allNumbers[i+1]==allNumbers[i]+1)
+                return String.valueOf(allNumbers[i+1]);
+        }
+
+        return null;
+    }
+
 }
-}
+
