@@ -6,8 +6,8 @@ public class Solution {
     //return value
 
     public Integer[] stringToNumbers(String[] input) {
-        Arrays.sort(input);
         HashMap<String, Integer> numbers = new HashMap<String, Integer>();
+        numbers.put("zero",0);
         numbers.put("one", 1);
         numbers.put("two", 2);
         numbers.put("three", 3);
@@ -29,7 +29,7 @@ public class Solution {
         numbers.put("nineteen", 19);
         numbers.put("twenty", 20);
 
-        HashMap<String, Integer> hashy = new HashMap<>();
+       LinkedHashMap<String, Integer> hashy = new LinkedHashMap<>();
         // split the String by a comma
         // iterate the parts and add them to a HashMap
         for (String part : input) {
@@ -38,7 +38,6 @@ public class Solution {
             String nums = numData[0].trim();
             // Add to map
             hashy.put(nums, numbers.get(nums));
-
         }
         return hashy.values().toArray(new Integer[0]);
 
