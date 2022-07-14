@@ -33,17 +33,14 @@ public class Solution {
         // split the String by a comma
         // iterate the parts and add them to a HashMap
         for (String part : input) {
-            // split the student data by colon to get the
-            // name and roll number
-            String stuData[] = part.split(",");
-            String stuRollNo = stuData[0].trim();
+            // split the  data by colon to get
+            String numData[] = part.split(",");
+            String nums = numData[0].trim();
             // Add to map
-            hashy.put(stuRollNo, numbers.get(stuRollNo));
-
-
-
+            hashy.put(nums, numbers.get(nums));
 
         }
         return hashy.values().toArray(new Integer[0]);
+
     }
 }
