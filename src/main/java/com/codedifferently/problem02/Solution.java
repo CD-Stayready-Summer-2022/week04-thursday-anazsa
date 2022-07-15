@@ -1,30 +1,23 @@
 package com.codedifferently.problem02;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
+
+//turn string to char array
+//count how many times the char appears
+//increment count for each letter
+// ush some time of map
 public class Solution {
     public String howManyLettersDoYouSee(String input) {
-
-        int[] count = new int[256];
-        for (int i = 0; i < input.length(); i++) {
-            char ch = input.charAt(i);
-            count[ch] +=1;
-        }
-        int maxcount = -1 ;
-        char longest = 0 ;
-        for( char ch : input.toCharArray()) {
-            if(count[ch] > maxcount) {
-                maxcount = count[ch];
-                longest = ch ;
+        int count =1;
+        LinkedHashMap<Character,Integer> hashy = new LinkedHashMap<>();
+        char[] newChar = input.toCharArray();
+        for (int i = 0; i < newChar.length; i++){
+            hashy.put(newChar[i],count);
+            if(hashy.containsKey(newChar[i])){
+                count++;
             }
-
         }
-        return String.valueOf(longest)+ ":"+ String.valueOf(maxcount);
-
-
-
-
-    }//main
+        return null;
+    }
 }
