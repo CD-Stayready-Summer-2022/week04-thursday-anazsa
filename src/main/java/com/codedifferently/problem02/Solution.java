@@ -14,7 +14,7 @@ public class Solution {
         char[] newChar = input.toCharArray();
         for (int i = 0; i < newChar.length; i++) {
             hashy.put(newChar[i], count);
-            if (hashy.containsKey(newChar[i])) {
+            if (hashy.containsValue(1)) {
                 hashy.put(newChar[i], hashy.get(newChar[i]) + 1);
             }
         }
